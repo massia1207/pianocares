@@ -107,7 +107,7 @@ h1, h2, h3 {
 }
 
 /* Contact and About Sections */
-.about-section, .contact-section {
+.about-section, .contact-section, .gallery-section {
   text-align: center;
   background: var(--primary-bg);
   padding: 40px 30px;
@@ -128,7 +128,7 @@ h1, h2, h3 {
   letter-spacing: 2px;
 }
 
-.about-section h3::after, .contact-section h3::after {
+.about-section h3::after, .contact-section h3::after, .gallery-section h3::after {
   content: '';
   display: block;
   margin: 16px auto 0 auto;
@@ -200,7 +200,7 @@ h1, h2, h3 {
   justify-content: center;
 }
 
-.gallery-section {
+/* .gallery-section {
   text-align: center;
   background: var(--primary-bg);
   padding: 40px 30px;
@@ -209,7 +209,7 @@ h1, h2, h3 {
   max-width: 900px;
   width: 95%;
   margin: 40px auto 0 auto;
-}
+} */
 .gallery-section h3 {
   font-size: 2em;
   margin-bottom: 30px;
