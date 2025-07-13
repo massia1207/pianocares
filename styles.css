@@ -320,6 +320,34 @@ h1, h2, h3 {
   transform: scale(1.2);
 }
 
+.site-footer {
+  background: #222;
+  color: #fff;
+  padding: 28px 0 18px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-size: 1.1em;
+}
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+}
+.footer-icon:hover {
+  transform: scale(1.15) rotate(-6deg);
+  box-shadow: 0 2px 12px rgba(231,76,60,0.18);
+  background: rgba(255,255,255,0.08);
+}
+
 @media (max-width: 900px) {
   .main-container, .about-section, .contact-section {
     max-width: 98vw;
@@ -381,5 +409,10 @@ h1, h2, h3 {
   }
   .carousel-dots {
     gap: 8px;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1em;
   }
 }
