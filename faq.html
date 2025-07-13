@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Cares - FAQ</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
+            margin: 0;
+            color: #333;
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .navbar nav ul {
+            display: flex;
+            gap: 0;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-item {
+            /* Add spacing if needed */
+        }
+        .navbar nav a {
+            color: white;
+            padding: 5px 18px;
+            border-radius: 5px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .navbar nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .navbar nav a.active {
+            background-color: #e74c3c;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(231,76,60,0.15);
+        }
+        .faq-container {
+            max-width: 700px;
+            margin: 60px auto 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            padding: 40px 30px 30px 30px;
+        }
+        .faq-container h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.5em;
+            color: #8B4513;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .faq-container p {
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+        }
+        .faq-accordion {
+            margin-top: 30px;
+        }
+        .faq-item {
+            background: #f8f4f0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.07);
+            margin-bottom: 18px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .faq-question {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #8B4513;
+            padding: 20px 24px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #f8f4f0 80%, #e8ddd4 100%);
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: #f3e7d9;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: #fff;
+            color: #333;
+            font-size: 1em;
+            padding: 0 24px;
+            transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+        }
+        .faq-item.active .faq-answer {
+            padding: 18px 24px 24px 24px;
+            max-height: 400px;
+        }
+        .faq-toggle {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin-left: 12px;
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        .faq-contact {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .faq-contact a {
+            color: #e74c3c;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .faq-container {
+                max-width: 98vw;
+                padding: 18px 2vw;
+            }
+            .faq-question, .faq-answer {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Piano Cares</div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Here are answers to some of the most common questions about piano tuning, care, and maintenance. If you have a question that isn’t answered here, please <a href="contact.html">contact us</a>!</p>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <div class="faq-question">How often should my piano be tuned?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Most manufacturers recommend tuning your piano at least twice a year. New pianos, or those in environments with significant temperature or humidity changes, may need more frequent tuning.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Why does my piano go out of tune?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Pianos go out of tune primarily due to changes in humidity and temperature, which cause the wooden parts and strings to expand and contract. Regular playing and the natural settling of the instrument also contribute.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Why does my piano feel hard to play?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    If your piano keys feel stiff or heavy, it may be due to mechanical issues, lack of maintenance, or humidity affecting the action. A technician can diagnose and regulate the action for a smoother touch.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is it safe to dust the soundboard?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Yes, but use a soft, dry cloth or a feather duster. Avoid using water or cleaning products, and never vacuum inside the piano, as this can damage delicate parts.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does a tuning appointment take?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    A typical tuning appointment takes about 1 to 1.5 hours. If your piano needs additional repairs or adjustments, it may take longer.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is “regulation” and do I need it?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Regulation refers to the adjustment of the piano’s mechanical parts to ensure optimal touch and responsiveness. Over time, felt and wood compress or shift, and regulation restores the piano’s playability. Most pianos benefit from regulation every few years.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can you fix sticky or broken keys?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Yes! Most sticky or broken keys can be repaired during a service visit. Let us know in advance so we can bring any necessary parts.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is it okay to move my piano?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Upright and grand pianos are heavy and delicate. Always use professional piano movers. After moving, allow the piano to acclimate for a few weeks before tuning.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What should I do if my piano gets wet?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    If your piano is exposed to water, dry the exterior immediately and contact a technician. Water can cause serious damage to wood, felt, and metal parts if not addressed quickly.
+                </div>
+            </div>
+        </div>
+        <div class="faq-contact">
+            <p>Still have questions? <a href="contact.html">Contact Piano Cares</a> and we’ll be happy to help!</p>
+        </div>
+    </div>
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = this.parentElement;
+                var open = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+                if (!open) item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

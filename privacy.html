@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Piano Cares</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .navbar nav ul {
+            display: flex;
+            gap: 0;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .navbar nav a {
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar nav a.active {
+            background-color: #e74c3c;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(231,76,60,0.15);
+        }
+
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #8B4513;
+        }
+        
+        .header h1 {
+            color: #8B4513;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+        
+        .highlight-box h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 25px;
+            background: #fefefe;
+            border-left: 5px solid #8B4513;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .section h2 {
+            color: #8B4513;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h2::before {
+            content: "🎹";
+            margin-right: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .commitment-list {
+            background: #f0f8f0;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #228B22;
+            margin: 20px 0;
+        }
+        
+        .commitment-list h3 {
+            color: #228B22;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .commitment-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .commitment-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .commitment-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #228B22;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-section h2 {
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+        
+        .date-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .piano-icon {
+            font-size: 3em;
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Piano Cares</div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+                <li class="nav-item"><a href="contact.html" class="inactive">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p>Piano Cares</p>
+            <div class="piano-icon">🎹</div>
+        </div>
+        
+        <div class="highlight-box">
+            <h2>Our Privacy Commitment</h2>
+            <p>We respect your privacy completely. We do not share, sell, rent, or distribute any of your personal information to third parties under any circumstances.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Information We Collect</h2>
+            <p>In order to provide professional piano tuning services, we may collect the following information:</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Your name, phone number, email address, and service address</li>
+                <li><strong>Piano Information:</strong> Piano make, model, age, and service history for our records</li>
+                <li><strong>Scheduling Information:</strong> Preferred appointment times and service frequency</li>
+                <li><strong>Service Notes:</strong> Technical notes about your piano's condition and maintenance needs</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>How We Use Your Information</h2>
+            <p>Your information is used exclusively for the following business purposes:</p>
+            <ul>
+                <li>Scheduling and confirming piano tuning appointments</li>
+                <li>Maintaining service records for your piano's care</li>
+                <li>Sending appointment reminders and service notifications</li>
+                <li>Providing follow-up care recommendations</li>
+            </ul>
+        </div>
+        
+        <div class="commitment-list">
+            <h3>What We DON'T Do With Your Information:</h3>
+            <ul>
+                <li>Share your information with other businesses or service providers</li>
+                <li>Sell your contact details to marketing companies</li>
+                <li>Add you to third-party mailing lists</li>
+                <li>Use your information for any purpose other than piano services</li>
+                <li>Share your piano or service details with anyone outside our business</li>
+                <li>Rent or lease your personal data to third parties</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Information Security</h2>
+            <p>We take the security of your personal information seriously. All customer records are stored securely and access is limited to authorized personnel only. We use industry-standard security measures to protect your data from unauthorized access, disclosure, or misuse.</p>
+            <p>Payment information is processed through secure, encrypted channels and we do not store complete credit card information on our systems.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Information Retention</h2>
+            <p>We retain your information only as long as necessary to provide ongoing piano tuning services and maintain service history records. If you no longer require our services, you may request that we delete your information from our records.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Request a copy of the information we have about you</li>
+                <li>Ask us to correct any inaccurate information</li>
+                <li>Request deletion of your information from our records</li>
+                <li>Opt out of appointment reminders or service notifications</li>
+                <li>Ask questions about how your information is handled</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>No Third-Party Sharing</h2>
+            <p>We want to be absolutely clear: we do not share your personal information with anyone outside of our piano tuning business. This includes:</p>
+            <ul>
+                <li>No sharing with other service providers or contractors</li>
+                <li>No selling to marketing databases or lead generation companies</li>
+                <li>No partnerships that involve sharing customer data</li>
+                <li>No disclosure to business associates unless required by law</li>
+            </ul>
+            <p>The only exception would be if required by law enforcement or legal process, which we would handle in accordance with applicable privacy laws.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Website and Communications</h2>
+            <p>If you visit our website or communicate with us electronically, we may collect basic technical information such as IP addresses for security purposes. This information is not shared with third parties and is used solely for maintaining the security and functionality of our business communications.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. Any changes will be posted on our website and, if significant, we will notify existing customers directly. Our commitment to not sharing your information will remain unchanged.</p>
+        </div>
+        
+        <div class="contact-section">
+            <h2>Questions About Your Privacy?</h2>
+            <p>If you have any questions about this privacy policy or how we handle your information, please don't hesitate to contact us:</p>
+            <!-- <p><strong>Phone:</strong>301-388-5130<br> -->
+            <strong>Email:</strong> marcus@pianocares.com<br>
+        </div>
+        
+        <div class="date-updated">
+            <p>This privacy policy was last updated on 05/28/2025</p>
+        </div>
+    </div>
+</body>
+</html>

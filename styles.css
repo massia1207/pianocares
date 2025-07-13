@@ -1,387 +1,385 @@
-/* Basic Resets & Global Styles */
+/* Piano Cares Unified Styles */
+:root {
+  --primary-bg: #fff;
+  --accent-bg: #f8f4f0;
+  --primary-color: #8B4513;
+  --accent-color: #e74c3c;
+  --font-main: 'Open Sans', Arial, sans-serif;
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --radius: 16px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    width: 100%;
-    font-family: Arial, sans-serif; /* Adjust as needed */
-    color: #333;
-    line-height: 1.6;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
+  margin: 0;
+  color: #333;
+  min-height: 100vh;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header/Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-    color: white;
-    position: absolute; /* To overlay on the hero image */
-    width: 100%;
-    box-sizing: border-box; /* Include padding in width */
-    top: 0;
-    left: 0;
-    z-index: 100; /* Ensure navbar is on top of everything */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .navbar .logo {
-    font-weight: bold;
-    font-size: 1.2em;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: var(--font-heading);
 }
 
 .navbar nav ul {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar nav a {
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+  color: white;
+  padding: 5px 18px;
+  border-radius: 5px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.navbar nav a.active {
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.15);
 }
 
 .navbar nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Hero Section (Marcus Assia section) */
-.hero-section {
-    /* !! IMPORTANT: Replace 'path/to/your/piano-background-image.jpg' with your actual image URL or path !! */
-    background: url('path/to/your/piano-background-image.jpg') no-repeat center center/cover;
-    height: 60vh; /* Adjust height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white; /* Text color over the image */
-    position: relative; /* For the overlay */
+.main-container {
+  max-width: 700px;
+  margin: 60px auto 40px auto;
+  background: var(--primary-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 30px 30px 30px;
 }
 
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text readability */
-    z-index: 0; /* Behind content */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
 }
 
-.hero-content {
-    position: relative; /* To be above the overlay */
-    z-index: 1; /* Ensure content appears over the overlay */
-    padding: 0 20px; /* Add some horizontal padding */
+.button, .schedule-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.button:hover, .schedule-button:hover {
+  background-color: #D03A2B;
+  box-shadow: 0 0 25px rgba(234, 67, 53, 0.9);
 }
 
-.hero-content h1 {
-    font-size: 3em; /* Adjust font size */
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: add text shadow for more pop */
-}
-
-.hero-content .red-line {
-    width: 800px; /* This is the red line *within* the hero content */
-    height: 3px;
-    background-color: #e74c3c; /* Red color */
-    margin: 0 auto 20px auto;
-}
-
-.hero-content h2 {
-    font-size: 1.5em; /* Adjust font size */
-    font-weight: normal;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Optional: add text shadow */
-}
-
-/* About Section */
-.about-section {
-    padding: 60px 20%; /* Adjust padding and width as needed */
-    text-align: center;
-    background-color: #f8f8f8; /* Light background */
-}
-
-.about-section h3 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.about-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px; /* This is the red line *under the heading* */
-    height: 2px;
-    background-color: #e74c3c; /* Red color */
-}
-
-.about-section p {
-    max-width: 800px; /* Limit paragraph width */
-    margin: 0 auto 15px auto; /* Reduced margin-bottom to make space for specific offer paragraphs */
-    font-size: 1.1em;
-}
-
-/* NEW: Full-width Section Divider */
 .section-divider {
-    width: 100vw; /* Spans the entire viewport width */
-    height: 5px; /* Height of the red line */
-    background-color: #e74c3c; /* Red color */
-    margin: 0; /* Remove any default margins */
+  width: 100vw;
+  height: 2.5px;
+  background-color: var(--accent-color);
+  margin: 0 0 30px 0;
+  opacity: 0.7;
 }
 
-/* --- Button Styling (from your original code) --- */
+/* Contact and About Sections */
+.about-section, .contact-section {
+  text-align: center;
+  background: var(--primary-bg);
+  padding: 40px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  width: 90%;
+  margin: 40px auto 0 auto;
+  position: static;
+}
+
+.about-section h3, .contact-section h3 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-section h3::after, .contact-section h3::after {
+  content: '';
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 100px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.about-section p, .contact-section p {
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  font-size: 1.15em;
+  font-family: var(--font-main);
+}
+
 .button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 10px 10px; /* Reduce horizontal padding */
-    box-sizing: border-box; /* Include padding in width calculation */
-    overflow: hidden; /* Prevent container overflow */
-    margin-top: 40px; /* Space from content above */
-}
-        
-.schedule-button { /* Renamed from .responsive-button */
-    display: inline-block;
-    background-color: #EA4335; /* Google red */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 10px; /* Slightly reduced horizontal padding */
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    width: 80%; /* Large on desktop */
-    max-width: 600px; /* Maximum width on large screens */
-    position: relative; /* For glow effect positioning */
-    box-sizing: border-box; /* Include padding in width */
-    word-wrap: break-word; /* Allow words to break and wrap */
-    
-    /* Box shadow for initial glow */
-    box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
-    
-    /* Animations */
-    animation: pulse 2s infinite, glow 3s infinite;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+  margin-top: 40px;
 }
 
-/* Pulse animation */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.03);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-        
-/* Glow animation */
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(234, 67, 53, 0.8), 0 0 30px rgba(234, 67, 53, 0.6);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
-    }
-}
-        
-.schedule-button:hover { /* Renamed from .responsive-button:hover */
-    background-color: #D03A2B; /* Darker red on hover */
-    animation-play-state: paused; /* Pause animations on hover */
-    box-shadow: 0 0 25px rgba(234, 67, 53, 0.9); /* Strong glow on hover */
-}
-        
-/* Mobile responsiveness for button */
-@media screen and (max-width: 768px) {
-    .schedule-button { /* Renamed from .responsive-button */
-        width: 90%; /* Even wider percentage on mobile */
-        font-size: 16px;
-        padding: 10px 10px; /* Reduced padding */
-    }
-}
-        
-/* Small mobile devices for button */
-@media screen and (max-width: 480px) {
-    .schedule-button { /* Renamed from .responsive-button */
-        width: 95%; /* Nearly full width on small devices */
-        font-size: 14px;
-        padding: 10px 10px; /* Further reduced padding */
-        hyphens: auto; /* Enable hyphenation for better text wrapping */
-    }
-}
-/* --- End Button Styling --- */
-
-
-/* Styling for the Nova 2025 Offer Text (from previous turn) */
-.offer-heading {
-    font-size: 2.5em; /* Larger for "50 OFF" */
-    font-weight: bold;
-    color: #e74c3c; /* Red color for prominence */
-    margin-bottom: 5px;
-}
-
-.offer-subheading {
-    font-size: 1.8em; /* Size for "Piano Tuning" */
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
-.offer-price {
-    font-size: 2.2em; /* Size for "$200 $150" */
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.offer-price .strike-through {
-    text-decoration: line-through;
-    color: #888; /* Lighter color for the struck-through price */
-    font-weight: normal;
-    margin-right: 10px; /* Space between original and discounted price */
-}
-
-.offer-details {
-    font-size: 1.1em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.offer-locations {
-    font-size: 1em;
-    font-style: italic;
-    color: #555;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px; /* Space before the button */
-}
-
-
-/* Contact Section */
-.contact-section {
-    padding: 60px 20%;
-    text-align: center;
-    background-color: #fff; /* White background */
-}
-
-.contact-section h3 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.contact-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px; /* This is the red line *under the heading* */
-    height: 2px;
-    background-color: #e74c3c; /* Red line */
-}
-
-/* Container for the contact links */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 100%; /* Ensure container doesn't exceed viewport */
-    margin: 0 auto;
-    padding: 20px 0;
-    gap: 20px; /* Gap between icons */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    box-sizing: border-box; /* Include padding in width calculation */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .contact-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    width: auto; /* Auto width instead of fixed */
-    max-width: 60px; /* Max width for each link to prevent stretching */
-    margin: 0; /* Remove margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-family: var(--font-heading);
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
 .contact-link:hover {
-    transform: scale(1.1);
+  color: var(--accent-color);
 }
 
 .contact-icon {
-    width: 35px; /* Significantly smaller icons */
-    height: 35px;
-    margin-bottom: 8px;
-    object-fit: contain;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
 }
 
 .contact-text {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    color: #333;
-    text-align: center;
-    word-break: break-word;
-    max-width: 100%;
+  font-size: 1em;
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
-/* Basic Responsiveness (Example) */
+.hero-content {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-section {
+  text-align: center;
+  background: var(--primary-bg);
+  padding: 40px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 900px;
+  width: 95%;
+  margin: 40px auto 0 auto;
+}
+.gallery-section h3 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+.gallery-photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gallery-photo:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 6px 24px rgba(139, 69, 19, 0.18);
+}
+
+.carousel {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel-images {
+  width: 100%;
+  height: 0;
+  padding-bottom: 66.66%; /* 3:2 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #eee;
+}
+.carousel-photo {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+.carousel-photo.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  color: var(--accent-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-arrow.left {
+  left: 10px;
+}
+.carousel-arrow.right {
+  right: 10px;
+}
+.carousel-arrow:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.carousel-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: 2px solid transparent;
+}
+.carousel-dot.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .main-container, .about-section, .contact-section {
+    max-width: 98vw;
+    padding: 30px 5vw;
+  }
+  .container {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-    .navbar nav ul {
-        gap: 10px;
-    }
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    .hero-content h2 {
-        font-size: 1.2em;
-    }
-    .about-section, .contact-section {
-        padding: 40px 10%;
-    }
+  .navbar {
+    padding: 15px 20px;
+  }
+  .navbar nav ul {
+    gap: 0;
+  }
+  .main-container h1, .about-section h3, .contact-section h3 {
+    font-size: 1.3em;
+  }
+  .section-divider {
+    height: 2px;
+  }
 }
 
-@media screen and (max-width: 480px) {
-    .container {
-        gap: 15px; /* Even smaller gap on mobile */
-        padding: 15px 10px; /* Reduced padding */
-    }
-    
-    .contact-icon {
-        width: 30px; 
-        height: 30px;
-    }
-    
-    .contact-text {
-        font-size: 11px; /* Smaller text on mobile */
-    }
+@media (max-width: 600px) {
+  .main-container, .about-section, .contact-section {
+    max-width: 98vw;
+    padding: 18px 2vw;
+  }
+  .container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .contact-text {
+    font-size: 11px;
+  }
+  .gallery-section {
+    padding: 18px 2vw;
+  }
+  .gallery-grid {
+    gap: 12px;
+  }
+  .gallery-photo {
+    max-width: 98vw;
+    border-radius: 8px;
+  }
+  .carousel {
+    max-width: 98vw;
+  }
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1em;
+  }
+  .carousel-dots {
+    gap: 8px;
+  }
 }

@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piano Cares</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
         <div class="logo">Piano Cares</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="index.html" class="active">Home</a></li> -->
                 <!-- <li><a href="nova2025.html">Nova 2025 Offer</a></li> -->
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -24,18 +28,40 @@
             <div class="red-line"></div>
             <h2>PIANO TUNING IN THE WASHINGTON DC METRO AREA</h2>
         </div>
-    </section>
+    </section>    
 
     <div class="section-divider"></div>
 
     <section class="about-section">
         <h3>ABOUT</h3>
-        <p>Providing piano tuning and basic repairs to music lovers in the DC Metro Area. I am a member of the Piano Technicians Guild and trained in aural tuning with the International Piano Technicians School. My focus is on improving your instrument's performance through precise tuning, targeted repairs and detailed regulation of the mechanical action. Each service appointment aims to improve your piano's sound quality and overall playing experience.</p>
+        <p>Providing piano tuning and basic repairs to music lovers in the DC Metro Area. I am a member of the Piano Technicians Guild and trained in aural tuning with the International Piano Technicians School. <strong>My focus is on improving your instrument's performance through precise tuning, targeted repairs and detailed regulation of the mechanical action.</strong> Each service appointment aims to improve your piano's sound quality and overall playing experience.</p>
         
         <div class="button-container">
-            <a href="https://gazelleapp.io/scheduling/R09zN2TpnprljL6zKSSPCJVC" class="schedule-button">
+            <a href="https://gazelleapp.io/scheduling/R09zN2TpnprljL6zKSSPCJVC" class="schedule-button" rel="noopener" target="_blank">
                 Schedule Your Tuning
             </a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="gallery-section">
+        <h3>Gallery</h3>
+        <div class="carousel">
+            <button class="carousel-arrow left" aria-label="Previous image">&#8592;</button>
+            <div class="carousel-images">
+                <img src="Images/IMG_20250713_110804211_HDR.jpg" alt="Piano Gallery 1" class="carousel-photo active">
+                <img src="Images/IMG_20241224_110804211_HDR.jpg" alt="Piano Gallery 2" class="carousel-photo">
+                <img src="Images/IMG_20240315_161209416.jpg" alt="Piano Gallery 3" class="carousel-photo">
+                <img src="Images/U1 Strings.jpg" alt="Piano Strings" class="carousel-photo">
+            </div>
+            <button class="carousel-arrow right" aria-label="Next image">&#8594;</button>
+            <div class="carousel-dots">
+                <span class="carousel-dot active" data-index="0"></span>
+                <span class="carousel-dot" data-index="1"></span>
+                <span class="carousel-dot" data-index="2"></span>
+                <span class="carousel-dot" data-index="3"></span>
+            </div>
         </div>
     </section>
 
@@ -55,7 +81,7 @@
             </a>
 
             <a href='https://forms.zohopublic.com/marcusassia7237671871/form/WebLeads/formperma/g43d1u0OIExqkAoISFI1srzxTPKU2_ZJoEOh5hP5_cA' 
-               class="contact-link" target='_blank' 
+               class="contact-link" target='_blank' rel="noopener" 
                onclick="zforms_open_window(this.href, 648, 700); return false;"
                title="Contact Form">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/256px-Google_Forms_2020_Logo.svg.png?20230204080501" alt="Contact Form Icon" class="contact-icon">
@@ -63,6 +89,65 @@
             </a>
         </div>
     </section>
+
+    <script>
+// Carousel functionality
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-photo');
+const dots = document.querySelectorAll('.carousel-dot');
+const leftArrow = document.querySelector('.carousel-arrow.left');
+const rightArrow = document.querySelector('.carousel-arrow.right');
+let carouselInterval;
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+}
+
+function nextImage() {
+    let next = (currentIndex + 1) % images.length;
+    showImage(next);
+}
+
+function prevImage() {
+    let prev = (currentIndex - 1 + images.length) % images.length;
+    showImage(prev);
+}
+
+function startCarousel() {
+    carouselInterval = setInterval(nextImage, 4000);
+}
+
+function stopCarousel() {
+    clearInterval(carouselInterval);
+}
+
+rightArrow.addEventListener('click', () => {
+    stopCarousel();
+    nextImage();
+    startCarousel();
+});
+leftArrow.addEventListener('click', () => {
+    stopCarousel();
+    prevImage();
+    startCarousel();
+});
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        stopCarousel();
+        showImage(Number(dot.dataset.index));
+        startCarousel();
+    });
+});
+
+showImage(0);
+startCarousel();
+</script>
 
 </body>
 </html>

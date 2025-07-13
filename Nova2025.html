@@ -5,70 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piano Cares - Nova 2025 Offer</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fff;
+        }
+        .nova-offer-section {
+            max-width: 500px;
+            margin: 60px auto 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            padding: 40px 30px 30px 30px;
+            text-align: center;
+        }
+        .nova-offer-section .big-discount {
+            font-size: 3em;
+            font-weight: 900;
+            color: #e74c3c;
+            margin-bottom: 0.2em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .nova-offer-section .service {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .nova-offer-section .offer-price {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .nova-offer-section .strike-through {
+            text-decoration: line-through;
+            color: #888;
+            font-weight: 400;
+            margin-right: 10px;
+        }
+        .nova-offer-section .offer-details {
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .nova-offer-section .offer-locations {
+            font-size: 1em;
+            color: #555;
+            margin: 0 0 30px 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            text-align: left;
+            display: inline-block;
+        }
+        .nova-offer-section .offer-locations ul {
+            margin: 0;
+            padding-left: 1.2em;
+        }
+        .nova-offer-section .schedule-button {
+            display: inline-block;
+            background-color: #EA4335;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 18px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            max-width: 350px;
+            box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .nova-offer-section .schedule-button:hover {
+            background-color: #D03A2B;
+            box-shadow: 0 0 25px rgba(234, 67, 53, 0.9);
+        }
+        .nova-contact-section {
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .nova-contact-section h3 {
+            font-size: 1.3em;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 900;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nova-contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .nova-contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #333;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nova-contact-link:hover {
+            color: #e74c3c;
+        }
+        .nova-contact-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 2px;
+        }
+        .nova-contact-text {
+            font-size: 1em;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+        }
+        @media (max-width: 600px) {
+            .nova-offer-section, .nova-contact-section {
+                max-width: 98vw;
+                padding: 18px 2vw;
+            }
+            .nova-contact-links {
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbar" style="box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
         <div class="logo">Piano Cares</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="nova2025.html">Nova 2025 Offer</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
+            <ul style="margin:0; padding:0; list-style:none; display:flex; gap:20px;">
+                <li><a href="index.html" class="active">Home</a></li>
             </ul>
         </nav>
     </header>
-
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>MARCUS ASSIA</h1>
-            <div class="red-line"></div>
-            <h2>PIANO TUNING IN THE WASHINGTON DC METRO AREA</h2>
+    <section class="nova-offer-section">
+        <div class="big-discount">$50 OFF</div>
+        <div class="service">Piano Tuning</div>
+        <div class="offer-price"><span class="strike-through">$200</span> $150</div>
+        <div class="offer-details">Offer applies to one tuning for new customers in the following parts of the DC area:</div>
+        <div class="offer-locations" style="text-align: center;">
+            Arlington &bull; Annandale &bull; Alexandria &bull; Falls Church &bull; Fairfax City &bull; Vienna &bull; Mclean &bull; Great Falls &bull; Bethesda &bull; Chevy Chase &bull; Potomac &bull; Rockville &bull; Washington, DC
         </div>
+        <a href="https://gazelleapp.io/scheduling/R09zN2TpnprljL6zKSSPCJVC" class="schedule-button" rel="noopener" target="_blank">
+            Claim Your Discount Now!
+        </a>
     </section>
 
-    <div class="section-divider"></div>
-
-    <section class="about-section">
-        <h3>NOVA 2025 SPECIAL OFFER</h3>
-        
-        <p class="offer-heading">$50 OFF</p>
-        <p class="offer-subheading">Piano Tuning</p>
-        <p class="offer-price">$200 <span class="strike-through">$150</span></p>
-        
-        <p class="offer-details">Offer applies to one tuning for new customers in the following parts of the DC area:</p>
-        <p class="offer-locations">Arlington - Annandale - Alexandria - Falls Church - Fairfax City - Vienna - Mclean - Great Falls - Bethesda - Chevy Chase - Potomac - Rockville - Washington, DC</p>
-        
-        <div class="button-container">
-            <a href="https://gazelleapp.io/scheduling/R09zN2TpnprljL6zKSSPCJVC" class="schedule-button">
-                Claim Your Discount Now!
-            </a>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="contact-section">
+    <section class="nova-contact-section">
         <h3>Contact Piano Cares</h3>
-        <div class="container">
-            <a href="https://wa.me/message/7R5CNPMMFF5AH1" class="contact-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="contact-icon">
-                <span class="contact-text">Chat</span>
+        <div class="nova-contact-links">
+            <a href="https://wa.me/message/7R5CNPMMFF5AH1" class="nova-contact-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="nova-contact-icon">
+                <span class="nova-contact-text">Chat</span>
             </a>
-            
-            <a href="mailto:marcus@pianocares.com" class="contact-link" target="_blank" rel="noopener noreferrer" title="Email us">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" class="contact-icon">
-                <span class="contact-text">Email</span>
+            <a href="mailto:marcus@pianocares.com" class="nova-contact-link" target="_blank" rel="noopener noreferrer" title="Email us">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" class="nova-contact-icon">
+                <span class="nova-contact-text">Email</span>
             </a>
-
             <a href='https://forms.zohopublic.com/marcusassia7237671871/form/WebLeads/formperma/g43d1u0OIExqkAoISFI1srzxTPKU2_ZJoEOh5hP5_cA' 
-               class="contact-link" target='_blank' 
+               class="nova-contact-link" target='_blank' rel="noopener" 
                onclick="zforms_open_window(this.href, 648, 700); return false;"
                title="Contact Form">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/256px-Google_Forms_2020_Logo.svg.png?20230204080501" alt="Contact Form Icon" class="contact-icon">
-                <span class="contact-text">Form</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/256px-Google_Forms_2020_Logo.svg.png?20230204080501" alt="Contact Form Icon" class="nova-contact-icon">
+                <span class="nova-contact-text">Form</span>
             </a>
         </div>
     </section>
-
 </body>
 </html>
