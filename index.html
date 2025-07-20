@@ -80,20 +80,9 @@
         <div class="carousel">
             <button class="carousel-arrow left" aria-label="Previous image">&#8592;</button>
             <div class="carousel-images">
-                <img src="Images/tuning.jpg" alt="Piano tuning in Washington DC" class="carousel-photo active">
-                <img src="Images/Buddy.jpg" alt="Piano technician with dog in DC area" class="carousel-photo">
-                <img src="Images/grandAction.jpg" alt="Grand piano action regulation" class="carousel-photo">
-                <img src="Images/YamFront.jpg" alt="Yamaha piano front view" class="carousel-photo">
-                <img src="Images/U1 Strings.jpg" alt="Yamaha U1 piano strings" class="carousel-photo">
+                <!-- Images will be inserted here by JavaScript -->
             </div>
             <button class="carousel-arrow right" aria-label="Next image">&#8594;</button>
-            <div class="carousel-dots">
-                <span class="carousel-dot active" data-index="0"></span>
-                <span class="carousel-dot" data-index="1"></span>
-                <span class="carousel-dot" data-index="2"></span>
-                <span class="carousel-dot" data-index="3"></span>
-                <span class="carousel-dot" data-index="4"></span>
-            </div>
         </div>
     </section>
 
@@ -121,65 +110,7 @@
     </section>
     </main>
 
-    <script>
-// Carousel functionality
-let currentIndex = 0;
-const images = document.querySelectorAll('.carousel-photo');
-const dots = document.querySelectorAll('.carousel-dot');
-const leftArrow = document.querySelector('.carousel-arrow.left');
-const rightArrow = document.querySelector('.carousel-arrow.right');
-let carouselInterval;
-
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-    });
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-    currentIndex = index;
-}
-
-function nextImage() {
-    let next = (currentIndex + 1) % images.length;
-    showImage(next);
-}
-
-function prevImage() {
-    let prev = (currentIndex - 1 + images.length) % images.length;
-    showImage(prev);
-}
-
-function startCarousel() {
-    carouselInterval = setInterval(nextImage, 4000);
-}
-
-function stopCarousel() {
-    clearInterval(carouselInterval);
-}
-
-rightArrow.addEventListener('click', () => {
-    stopCarousel();
-    nextImage();
-    startCarousel();
-});
-leftArrow.addEventListener('click', () => {
-    stopCarousel();
-    prevImage();
-    startCarousel();
-});
-dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        stopCarousel();
-        showImage(Number(dot.dataset.index));
-        startCarousel();
-    });
-});
-
-showImage(0);
-startCarousel();
-</script>
-
+    <script src="carousel.js"></script>
 </body>
 <footer class="site-footer">
     <div class="footer-content">
