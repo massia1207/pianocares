@@ -13,26 +13,179 @@
     <meta property="og:image" content="https://pianocares.com/Images/tuning.jpg">
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Piano Cares",
-      "image": "https://pianocares.com/Images/tuning.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Annandale",
-        "addressRegion": "VA", 
-        "addressCountry": "US"
-      },
-      "telephone": "+1-703-919-8521",
-      "url": "https://pianocares.com",
-      "priceRange": "$$",
-      "areaServed": [
-        "Arlington, VA", "Fairfax, VA", "Annandale, VA", "Springfield, VA", "Alexandria, VA", "Washington, DC", "Bethesda, MD", "Rockville, MD", "Falls Church, VA", "Chevy Chase, MD", "Potomac, MD", "Vienna, VA", "McLean, VA", "Great Falls, VA"
-      ],
-      "description": "Professional piano tuning and repair in the DC metro area."
-    }
-    </script>
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Piano Cares",
+        "description": "Piano Cares offers expert piano tuning, repair, regulation, and voicing services for all types of pianos, including grands, uprights, and consoles. Serving the greater Washington, DC, Northern Virginia, and Maryland metropolitan area.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://pianocares.com/Images/tuning.jpg",
+            "height": "800",
+            "width": "1200"
+        },
+        "@id": "https://pianocares.com",
+        "url": "https://pianocares.com",
+        "telephone": "+1-703-919-8521",
+        "email": "marcus@pianocares.com",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Annandale",
+            "addressRegion": "VA",
+            "postalCode": "22003",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "38.8304",
+            "longitude": "-77.2019"
+        },
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+            },
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "15:00"
+            }
+        ],
+        "areaServed": [
+            {
+            "@type": "City",
+            "name": "Arlington",
+            "sameAs": "https://en.wikipedia.org/wiki/Arlington,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Alexandria",
+            "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Great Falls",
+            "sameAs": "https://en.wikipedia.org/wiki/Great_Falls,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "McLean",
+            "sameAs": "https://en.wikipedia.org/wiki/McLean,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Fairfax",
+            "sameAs": "https://en.wikipedia.org/wiki/Fairfax,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Annandale",
+            "sameAs": "https://en.wikipedia.org/wiki/Annandale,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Springfield",
+            "sameAs": "https://en.wikipedia.org/wiki/Springfield,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Falls Church",
+            "sameAs": "https://en.wikipedia.org/wiki/Falls_Church,_Virginia"
+            },
+            {
+            "@type": "City",
+            "name": "Washington",
+            "sameAs": "https://en.wikipedia.org/wiki/Washington,_D.C."
+            },
+            {
+            {
+            "@type": "City",
+            "name": "Bethesda",
+            "sameAs": "https://en.wikipedia.org/wiki/Bethesda,_Maryland"
+            },
+            {
+            "@type": "City",
+            "name": "Potomac",
+            "sameAs": "https://en.wikipedia.org/wiki/Potomac,_Maryland"
+            },
+            {
+            "@type": "City",
+            "name": "Chevy Chase",
+            "sameAs": "https://en.wikipedia.org/wiki/Chevy_Chase,_Maryland"
+            },
+            "@type": "AdministrativeArea",
+            "name": "Northern Virginia"
+            },
+            {
+            "@type": "AdministrativeArea",
+            "name": "Montgomery County",
+            "sameAs": "https://en.wikipedia.org/wiki/Montgomery_County,_Maryland"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Piano Services",
+            "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                "@type": "Service",
+                "name": "Standard Piano Tuning",
+                "description": "Aural tuning of your piano to the A440 standard pitch, ensuring a beautiful, resonant sound."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                "@type": "Service",
+                "name": "Pitch Correction / Pitch Raise",
+                "description": "A preliminary tuning to bring a long-neglected piano back up to the proper A440 concert pitch before a fine-tuning."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                "@type": "Service",
+                "name": "Piano Repair & Regulation",
+                "description": "Expert repair of sticking keys, broken strings, and pedal issues, plus regulation of the piano's action for optimal touch and responsiveness."
+                }
+            }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "1"
+        },
+        "review": {
+            "@type": "Review",
+            "author": {
+            "@type": "Person",
+            "name": "Dave Williams"
+            },
+            "datePublished": "2025-05-27",
+            "reviewBody": "Expert, professional, friendly, patient and thorough. Highly recommend.",
+            "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+            }
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61575509181449",
+            "https://www.instagram.com/pianocares"
+        ]
+        }
+   </script>
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
