@@ -271,6 +271,98 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
+/* Phone number tooltip */
+.contact-link[href^="tel:"] {
+  position: relative;
+}
+
+.contact-link[href^="tel:"]::after {
+  content: "703-919-8521";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-link[href^="tel:"]::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-link[href^="tel:"]:hover::after,
+.contact-link[href^="tel:"]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Email tooltip */
+.contact-link[href^="mailto:"] {
+  position: relative;
+}
+
+.contact-link[href^="mailto:"]::after {
+  content: "marcus@pianocares.com";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-link[href^="mailto:"]::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-link[href^="mailto:"]:hover::after,
+.contact-link[href^="mailto:"]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .hero-content {
   text-align: center;
   width: 100%;
