@@ -1,5 +1,6 @@
 // Gallery image filenames (add/remove as needed)
 const imageFiles = [
+    'MarcusTuning.jpg',
     'HayAdamsRoof.jpg',
     'tuning.jpg',
     'Buddy.jpg',
