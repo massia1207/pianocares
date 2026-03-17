@@ -277,7 +277,7 @@ h1, h2, h3 {
 }
 
 .contact-link[href^="tel:"]::after {
-  content: "703-919-8521";
+  content: "703-919-8521 (Text Preferred - hard to answer calls while tuning)";
   position: absolute;
   bottom: -40px;
   left: 50%;
