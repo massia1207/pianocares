@@ -65,4 +65,77 @@ leftArrow.addEventListener('click', () => {
 });
 
 showImage(0);
-startCarousel(); 
+startCarousel();
+
+// Reviews Carousel
+const reviewCards = document.querySelectorAll('.review-card');
+const reviewLeftArrow = document.querySelector('.review-arrow.left');
+const reviewRightArrow = document.querySelector('.review-arrow.right');
+const reviewDotsContainer = document.querySelector('.review-dots');
+let currentReviewIndex = 0;
+let reviewInterval;
+
+// Create dots for reviews
+if (reviewDotsContainer && reviewCards.length > 0) {
+    reviewCards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'review-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+        dot.addEventListener('click', () => {
+            stopReviewCarousel();
+            showReview(i);
+            startReviewCarousel();
+        });
+        reviewDotsContainer.appendChild(dot);
+    });
+}
+
+function showReview(index) {
+    reviewCards.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+    });
+    const dots = document.querySelectorAll('.review-dot');
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    currentReviewIndex = index;
+}
+
+function nextReview() {
+    let next = (currentReviewIndex + 1) % reviewCards.length;
+    showReview(next);
+}
+
+function prevReview() {
+    let prev = (currentReviewIndex - 1 + reviewCards.length) % reviewCards.length;
+    showReview(prev);
+}
+
+function startReviewCarousel() {
+    reviewInterval = setInterval(nextReview, 6000);
+}
+
+function stopReviewCarousel() {
+    clearInterval(reviewInterval);
+}
+
+if (reviewRightArrow) {
+    reviewRightArrow.addEventListener('click', () => {
+        stopReviewCarousel();
+        nextReview();
+        startReviewCarousel();
+    });
+}
+
+if (reviewLeftArrow) {
+    reviewLeftArrow.addEventListener('click', () => {
+        stopReviewCarousel();
+        prevReview();
+        startReviewCarousel();
+    });
+}
+
+if (reviewCards.length > 0) {
+    showReview(0);
+    startReviewCarousel();
+}

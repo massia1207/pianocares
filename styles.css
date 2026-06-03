@@ -423,40 +423,61 @@ h1, h2, h3 {
 }
 
 .reviews-section h2 {
-  font-size: 1.8em;
-  margin-bottom: 30px;
+  font-size: 1.5em;
+  margin-bottom: 24px;
+}
+
+.reviews-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .reviews-container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  overflow: hidden;
 }
 
 .review-card {
   background: var(--accent-bg);
-  padding: 24px;
+  padding: 20px;
   border-radius: 12px;
-  text-align: left;
+  text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.review-card.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
 .review-stars {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .review-stars .star {
   color: #f5c518;
-  font-size: 1.4em;
+  font-size: 1.1em;
   margin-right: 2px;
 }
 
 .review-text {
-  font-size: 1.1em;
-  line-height: 1.6;
+  font-size: 0.95em;
+  line-height: 1.5;
   color: #333;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   font-style: italic;
 }
 
@@ -465,7 +486,51 @@ h1, h2, h3 {
   font-weight: 600;
   color: var(--primary-color);
   margin: 0;
-  font-size: 1em;
+  font-size: 0.9em;
+}
+
+.review-arrow {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2em;
+  color: var(--accent-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.review-arrow:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0 20px 0;
+}
+
+.review-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+}
+
+.review-dot.active {
+  background: var(--accent-color);
+  transform: scale(1.2);
 }
 
 .google-review-link {
@@ -476,10 +541,11 @@ h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: 600;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 10px 16px;
   border: 2px solid var(--primary-color);
   border-radius: 8px;
   transition: background 0.2s, color 0.2s;
+  font-size: 0.9em;
 }
 
 .google-review-link:hover {
@@ -488,8 +554,8 @@ h1, h2, h3 {
 }
 
 .google-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 @media (max-width: 600px) {
@@ -497,12 +563,17 @@ h1, h2, h3 {
     padding: 18px 2vw;
   }
   .review-card {
-    padding: 18px;
+    padding: 16px;
   }
   .review-stars .star {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .review-text {
+    font-size: 0.9em;
+  }
+  .review-arrow {
+    width: 30px;
+    height: 30px;
     font-size: 1em;
   }
 }
